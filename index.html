@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>MathQuest Kids</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Daily 10–15 min practice</p>
+      <h1>MathQuest Kids</h1>
+    </div>
+    <button id="installBtn" class="ghost hidden">Install</button>
+  </header>
+
+  <main>
+    <section id="quickCheckCard" class="card">
+      <h2>1) Quick Skill Check</h2>
+      <p>Answer 5 short questions so we can personalize today’s path.</p>
+      <div id="skillCheckArea"></div>
+      <button id="startSkillCheck" class="primary">Start Skill Check</button>
+    </section>
+
+    <section id="pathCard" class="card hidden">
+      <h2>2) Personalized Learning Path</h2>
+      <p id="pathSummary"></p>
+      <ul id="pathList" class="pill-list"></ul>
+    </section>
+
+    <section id="sessionCard" class="card hidden">
+      <div class="space-between">
+        <h2>3) Daily Game Practice</h2>
+        <span id="timer" class="badge">10:00</span>
+      </div>
+      <p>Play 10 rounds. Each round unlocks stars, coins, and level progress.</p>
+      <div id="gameArea"></div>
+      <div class="meter-wrap">
+        <label for="levelProgress">Level Progress</label>
+        <progress id="levelProgress" max="100" value="0"></progress>
+      </div>
+    </section>
+
+    <section id="mentorCard" class="card">
+      <h2>Mentor & Habit Coach</h2>
+      <p id="mentorMessage">Let’s build a daily habit—small wins every day 💪</p>
+      <div class="mentor-grid">
+        <div>
+          <p class="label">Current Streak</p>
+          <p id="streakValue" class="value">0 days</p>
+        </div>
+        <div>
+          <p class="label">Consistency</p>
+          <p id="disciplineValue" class="value">0%</p>
+        </div>
+      </div>
+      <button id="checkInBtn" class="secondary">Daily Check-In</button>
+    </section>
+
+    <section id="rewardsCard" class="card">
+      <h2>Rewards & Progression</h2>
+      <div class="reward-row">
+        <div><p class="label">Level</p><p id="levelValue" class="value">1</p></div>
+        <div><p class="label">Stars</p><p id="starsValue" class="value">0</p></div>
+        <div><p class="label">Coins</p><p id="coinsValue" class="value">0</p></div>
+      </div>
+      <ul id="badges" class="pill-list"></ul>
+    </section>
+
+    <section id="reportCard" class="card">
+      <h2>Weekly Parent Report</h2>
+      <p>Simple, confidence-friendly summary for home review.</p>
+      <div id="weeklySummary" class="report"></div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Accuracy</th>
+            <th>Confidence</th>
+            <th>Minutes</th>
+          </tr>
+        </thead>
+        <tbody id="reportBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="tabbar">
+    <button data-jump="quickCheckCard">Check</button>
+    <button data-jump="sessionCard">Practice</button>
+    <button data-jump="mentorCard">Mentor</button>
+    <button data-jump="reportCard">Report</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
